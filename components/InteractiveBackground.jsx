@@ -16,14 +16,14 @@ export default function InteractiveBackground() {
       const startX = Math.random() * window.innerWidth
       const startY = Math.random() * window.innerHeight
       const animationDuration = Math.random() * 15 + 10
-      const opacity = Math.random() * 0.4 + 0.1
+      const opacity = Math.random() * 0.3 + 0.1
 
       const colors = [
-        "rgba(59, 130, 246, 0.2)", // blue
-        "rgba(139, 92, 246, 0.2)", // purple
-        "rgba(236, 72, 153, 0.2)", // pink
-        "rgba(34, 197, 94, 0.2)", // green
-        "rgba(251, 146, 60, 0.2)", // orange
+        "rgba(37, 99, 235, 0.15)", // blue-600 primary
+        "rgba(16, 185, 129, 0.12)", // emerald-500 secondary
+        "rgba(107, 114, 128, 0.1)", // gray-500 neutral
+        "rgba(17, 24, 39, 0.08)", // gray-900 text
+        "rgba(75, 85, 99, 0.1)", // gray-600
       ]
       const color = colors[Math.floor(Math.random() * colors.length)]
 
@@ -58,7 +58,7 @@ export default function InteractiveBackground() {
       const startX = Math.random() * (window.innerWidth - width)
       const startY = Math.random() * window.innerHeight
       const animationDuration = Math.random() * 8 + 6
-      const opacity = Math.random() * 0.1 + 0.05
+      const opacity = Math.random() * 0.08 + 0.03
 
       line.style.cssText = `
         position: absolute;
@@ -66,7 +66,7 @@ export default function InteractiveBackground() {
         height: ${height}px;
         left: ${startX}px;
         top: ${startY}px;
-        background: linear-gradient(90deg, transparent, rgba(59, 130, 246, ${opacity}), transparent);
+        background: linear-gradient(90deg, transparent, rgba(37, 99, 235, ${opacity}), transparent);
         animation: networkPulse ${animationDuration}s ease-in-out infinite;
         pointer-events: none;
         transform-origin: center;
@@ -87,7 +87,6 @@ export default function InteractiveBackground() {
     const handleMouseMove = (e) => {
       const { clientX, clientY } = e
 
-      // Create trailing particles on mouse move
       if (Math.random() > 0.9) {
         const trail = document.createElement("div")
         trail.style.cssText = `
@@ -96,7 +95,7 @@ export default function InteractiveBackground() {
           top: ${clientY}px;
           width: 6px;
           height: 6px;
-          background: radial-gradient(circle, rgba(59, 130, 246, 0.4), transparent);
+          background: radial-gradient(circle, rgba(37, 99, 235, 0.4), transparent);
           border-radius: 50%;
           transform: translate(-50%, -50%);
           animation: trailFade 3s ease-out forwards;
@@ -172,17 +171,17 @@ export default function InteractiveBackground() {
         
         @keyframes morphGlow {
           0%, 100% { 
-            opacity: 0.15; 
+            opacity: 0.08; 
             transform: scale(1) rotate(0deg);
             border-radius: 50%;
           }
           33% { 
-            opacity: 0.25; 
+            opacity: 0.12; 
             transform: scale(1.2) rotate(120deg);
             border-radius: 30%;
           }
           66% { 
-            opacity: 0.2; 
+            opacity: 0.1; 
             transform: scale(0.9) rotate(240deg);
             border-radius: 60%;
           }
@@ -190,9 +189,9 @@ export default function InteractiveBackground() {
       `}</style>
 
       <div ref={containerRef} className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/40 to-purple-50/30">
+        <div className="absolute inset-0 bg-gray-50">
           <div
-            className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-200/25 to-cyan-200/25"
+            className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-100/30 to-blue-200/20"
             style={{
               animation: "morphGlow 12s ease-in-out infinite",
               filter: "blur(40px)",
@@ -200,7 +199,7 @@ export default function InteractiveBackground() {
           ></div>
 
           <div
-            className="absolute top-2/3 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-200/20 to-pink-200/20"
+            className="absolute top-2/3 right-1/4 w-80 h-80 bg-gradient-to-r from-emerald-100/25 to-emerald-200/15"
             style={{
               animation: "morphGlow 15s ease-in-out infinite",
               animationDelay: "-5s",
@@ -209,7 +208,7 @@ export default function InteractiveBackground() {
           ></div>
 
           <div
-            className="absolute top-1/2 left-2/3 w-48 h-48 bg-gradient-to-r from-green-200/25 to-emerald-200/25"
+            className="absolute top-1/2 left-2/3 w-48 h-48 bg-gradient-to-r from-gray-200/20 to-gray-300/15"
             style={{
               animation: "morphGlow 10s ease-in-out infinite",
               animationDelay: "-8s",
@@ -219,25 +218,25 @@ export default function InteractiveBackground() {
 
           <div className="absolute top-1/3 left-1/2 w-4 h-4">
             <div
-              className="w-4 h-4 bg-blue-400/30 rounded-full"
+              className="w-4 h-4 bg-blue-600/20 rounded-full"
               style={{ animation: "orbitalFloat 20s linear infinite" }}
             ></div>
           </div>
 
           <div className="absolute top-2/3 left-1/3 w-3 h-3">
             <div
-              className="w-3 h-3 bg-purple-400/30 rounded-full"
+              className="w-3 h-3 bg-emerald-500/25 rounded-full"
               style={{ animation: "orbitalFloat 25s linear infinite", animationDelay: "-10s" }}
             ></div>
           </div>
         </div>
 
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage: `
-              radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-              radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.1) 1px, transparent 1px)
+              radial-gradient(circle at 25% 25%, rgba(37, 99, 235, 0.1) 1px, transparent 1px),
+              radial-gradient(circle at 75% 75%, rgba(16, 185, 129, 0.08) 1px, transparent 1px)
             `,
             backgroundSize: "80px 80px, 120px 120px",
           }}
@@ -247,8 +246,8 @@ export default function InteractiveBackground() {
           className="absolute inset-0 opacity-[0.02]"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(59, 130, 246, 0.08) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(139, 92, 246, 0.08) 1px, transparent 1px)
+              linear-gradient(rgba(107, 114, 128, 0.05) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(17, 24, 39, 0.04) 1px, transparent 1px)
             `,
             backgroundSize: "40px 40px",
           }}
