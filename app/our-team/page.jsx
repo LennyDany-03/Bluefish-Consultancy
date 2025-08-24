@@ -8,15 +8,15 @@ import  InteractiveBackground  from "../../components/InteractiveBackground"
 export default function OurTeam() {
   const teamMembers = [
     {
-      name: "Rajesh Kumar",
+      name: "Joseph Vijay Anand",
       position: "Founder & Managing Director",
       image: "/team-member-1.png",
       description:
-        "With over 15 years of experience in PF and labor law compliance, Rajesh leads our team with expertise and dedication.",
+        "With over 15 years of experience in PF and labor law compliance, Vijay leads our team with expertise and dedication.",
       expertise: ["PF Settlements", "Labor Law", "Compliance Strategy"],
     },
     {
-      name: "Priya Sharma",
+      name: "Member 2",
       position: "Senior Compliance Manager",
       image: "images/team-2.png",
       description:
@@ -24,7 +24,7 @@ export default function OurTeam() {
       expertise: ["Complex Cases", "ESI Compliance", "Statutory Advisory"],
     },
     {
-      name: "Amit Patel",
+      name: "Member 3",
       position: "SEZ Compliance Specialist",
       image: "/professional-indian-man-in-business-casual.png",
       description:
@@ -32,7 +32,7 @@ export default function OurTeam() {
       expertise: ["SEZ Compliance", "Export Documentation", "Zone Regulations"],
     },
     {
-      name: "Sneha Reddy",
+      name: "Member 4",
       position: "Client Relations Manager",
       image: "/professional-indian-woman-smiling-in-office-settin.png",
       description:

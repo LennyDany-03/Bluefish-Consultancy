@@ -245,10 +245,10 @@ export default function AboutUs() {
                   <User className="w-24 h-24 text-blue-600" />
                 </div>
                 <div className="text-center lg:text-left">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Mr. Rajesh Kumar</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Mr. Joseph Vijay Anand</h3>
                   <p className="text-blue-600 font-semibold mb-4">Founder & Chief Consultant</p>
                   <p className="text-gray-600 leading-relaxed">
-                    "With 15+ years of experience in PF, ESI, and labor law advisory, Rajesh has been instrumental in
+                    "With 15+ years of experience in PF, ESI, and labor law advisory, Joseph Vijay has been instrumental in
                     guiding businesses through regulatory complexities. His expertise and dedication have helped
                     hundreds of companies achieve seamless compliance."
                   </p>
