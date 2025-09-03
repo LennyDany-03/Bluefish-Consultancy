@@ -13,7 +13,7 @@ export default function OurTeam() {
       image: "/team-member-1.png",
       description:
         "With over 15 years of experience in PF and labor law compliance, Vijay leads our team with expertise and dedication.",
-      expertise: ["PF Settlements", "Labor Law", "Compliance Strategy"],
+      expertise: ["PF Settlements", "Labor Law"],
     },
     {
       name: "Member 2",
