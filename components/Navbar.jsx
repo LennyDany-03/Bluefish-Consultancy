@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, X, Heart, Star, Phone } from "lucide-react"
+import { Menu, X, Phone } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -38,7 +39,6 @@ const Navbar = () => {
   const logoVariants = {
     hover: {
       scale: 1.05,
-      rotate: [0, -5, 5, 0],
       transition: {
         type: "spring",
         stiffness: 300,
@@ -107,61 +107,22 @@ const Navbar = () => {
           }`}
         >
           <motion.div variants={logoVariants} whileHover="hover">
-            <Link href="/" className="flex items-center space-x-2 lg:space-x-3">
+            <Link href="/" className="flex items-center">
               <div className="relative">
-                <motion.div
-                  className={`bg-blue-600 rounded-full flex items-center justify-center shadow-xl border border-gray-200 transition-all duration-300 ${
-                    isScrolled ? "w-8 h-8 lg:w-10 lg:h-10" : "w-10 h-10 lg:w-12 lg:h-12"
-                  }`}
-                  whileHover={{
-                    boxShadow: "0 0 30px rgba(37, 99, 235, 0.4)",
-                    scale: 1.1,
-                  }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <Heart
-                    className={`text-white transition-all duration-300 ${
-                      isScrolled ? "w-4 h-4 lg:w-5 lg:h-5" : "w-5 h-5 lg:w-6 lg:h-6"
-                    }`}
-                  />
-                </motion.div>
-                <motion.div
-                  className={`absolute -top-1 -right-1 bg-emerald-500 rounded-full flex items-center justify-center border border-gray-200 transition-all duration-300 ${
-                    isScrolled ? "w-3 h-3 lg:w-4 lg:h-4" : "w-4 h-4 lg:w-5 lg:h-5"
-                  }`}
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-                >
-                  <Star
-                    className={`text-white transition-all duration-300 ${
-                      isScrolled ? "w-1.5 h-1.5 lg:w-2 lg:h-2" : "w-2 h-2 lg:w-3 lg:h-3"
-                    }`}
-                  />
-                </motion.div>
-              </div>
-              <div>
-                <h1
-                  className={`font-black text-gray-900 transition-all duration-300 ${
-                    isScrolled ? "text-base lg:text-lg" : "text-lg lg:text-xl"
-                  }`}
-                >
-                  <span className="lg:hidden">Bluefish</span>
-                  <span className="hidden lg:inline">Bluefish Consultancy</span>
-                </h1>
-                <p
-                  className={`text-gray-500 font-bold transition-all duration-300 ${
-                    isScrolled ? "text-xs" : "text-xs lg:text-sm"
-                  }`}
-                >
-                  <span className="lg:hidden">Trusted Partners</span>
-                  <span className="hidden lg:inline">Your Trusted Partners</span>
-                </p>
+                <Image
+                  src="/bluefish-logo.png"
+                  alt="Bluefish Consultancy"
+                  width={isScrolled ? 140 : 180}
+                  height={isScrolled ? 40 : 50}
+                  className="transition-all duration-300 object-contain"
+                  priority
+                />
               </div>
             </Link>
           </motion.div>
 
           <div className="hidden lg:flex items-center space-x-6">
-            {["Home", "About Us", "Our Services", "Our Team", "Contact"].map((item, index) => (
+            {["Home", "About Us", "Our Services", "Contact"].map((item, index) => (
               <motion.div key={index} variants={menuItemVariants} whileHover="hover">
                 <Link
                   href={item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "-")}`}
@@ -213,7 +174,7 @@ const Navbar = () => {
             exit="hidden"
           >
             <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-50/90 backdrop-blur-xl border-t border-gray-200 rounded-b-2xl">
-              {["Home", "About Us", "Our Services", "Our Team", "Contact"].map((item, index) => (
+              {["Home", "About Us", "Our Services", "Contact"].map((item, index) => (
                 <motion.div key={index} custom={index} variants={mobileItemVariants} initial="hidden" animate="visible">
                   <Link
                     href={item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "-")}`}

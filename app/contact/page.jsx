@@ -227,9 +227,9 @@ const ContactUs = () => {
                       <div>
                         <h4 className="font-semibold text-gray-900 mb-1">Office Address</h4>
                         <p className="text-gray-600">
-                          123 Business District
+                          13/22, Chinnaswamy St, Agaram, Perambur
                           <br />
-                          Mumbai, Maharashtra 400001
+                          Chennai, Tamil Nadu 600082
                           <br />
                           India
                         </p>
@@ -267,8 +267,7 @@ const ContactUs = () => {
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900 mb-1">Email Address</h4>
-                        <p className="text-gray-600">info@bluefishconsultancy.com</p>
-                        <p className="text-gray-600">support@bluefishconsultancy.com</p>
+                        <p className="text-gray-600">rvijayanand79@gmail.com</p>
                       </div>
                     </div>
                   </div>

@@ -15,6 +15,7 @@ import {
 } from "lucide-react"
 import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
+import Image from "next/image"
 import InteractiveBackground from "../../components/InteractiveBackground"
 
 export default function AboutUs() {
@@ -153,11 +154,19 @@ export default function AboutUs() {
 
               <motion.div className="relative" variants={itemVariants}>
                 <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-                  <div className="w-full h-64 bg-gradient-to-br from-blue-100 to-emerald-100 rounded-xl flex items-center justify-center">
-                    <Building className="w-24 h-24 text-blue-600" />
+                  <div className="relative w-full h-96 rounded-xl overflow-hidden">
+                    <Image
+                      src="/founder-photo.jpeg"
+                      alt="Mr. Joseph Vijay Anand - Founder"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
                   </div>
                   <div className="mt-6 text-center">
-                    <p className="text-gray-600 italic">Professional Excellence in Compliance</p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-1">Mr. Joseph Vijay Anand</h3>
+                    <p className="text-blue-600 font-semibold mb-2">Founder & Chief Consultant</p>
+                    <p className="text-gray-600 text-sm italic">Leading with 15+ years of expertise</p>
                   </div>
                 </div>
               </motion.div>
@@ -234,24 +243,45 @@ export default function AboutUs() {
           viewport={{ once: true }}
           variants={containerVariants}
         >
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <motion.div className="text-center mb-16" variants={itemVariants}>
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Meet Our Founder</h2>
+              <p className="text-xl text-gray-600">Leadership with vision and expertise</p>
             </motion.div>
 
-            <motion.div className="bg-gray-50 rounded-2xl p-8 sm:p-12" variants={itemVariants}>
-              <div className="flex flex-col lg:flex-row items-center gap-8">
-                <div className="w-48 h-48 bg-gradient-to-br from-blue-100 to-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <User className="w-24 h-24 text-blue-600" />
+            <motion.div
+              className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-3xl p-8 sm:p-12 shadow-xl border border-gray-200"
+              variants={itemVariants}
+            >
+              <div className="flex flex-col lg:flex-row items-center gap-12">
+                <div className="relative w-64 h-80 flex-shrink-0 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                  <Image
+                    src="/founder-photo.jpeg"
+                    alt="Mr. Joseph Vijay Anand"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
                 </div>
-                <div className="text-center lg:text-left">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Mr. Joseph Vijay Anand</h3>
-                  <p className="text-blue-600 font-semibold mb-4">Founder & Chief Consultant</p>
-                  <p className="text-gray-600 leading-relaxed">
-                    "With 15+ years of experience in PF, ESI, and labor law advisory, Joseph Vijay has been instrumental in
-                    guiding businesses through regulatory complexities. His expertise and dedication have helped
-                    hundreds of companies achieve seamless compliance."
-                  </p>
+                <div className="text-center lg:text-left flex-1">
+                  <h3 className="text-3xl font-bold text-gray-900 mb-2">Mr. Joseph Vijay Anand</h3>
+                  <p className="text-blue-600 font-bold text-lg mb-6">Founder & Chief Consultant</p>
+                  <div className="space-y-4">
+                    <p className="text-gray-700 leading-relaxed text-lg">
+                      With over 15 years of dedicated experience in PF, ESI, and labor law advisory, Joseph Vijay Anand
+                      has established himself as a trusted authority in compliance management across India.
+                    </p>
+                    <p className="text-gray-700 leading-relaxed text-lg">
+                      His expertise and unwavering commitment have guided hundreds of companies through complex
+                      regulatory landscapes, ensuring seamless compliance and peace of mind for business owners.
+                    </p>
+                    <div className="pt-4">
+                      <div className="inline-flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-full">
+                        <Award className="w-5 h-5" />
+                        <span className="font-semibold">Government Certified Expert</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -295,7 +325,6 @@ export default function AboutUs() {
         </motion.section>
         <Footer />
       </main>
-
     </div>
   )
 }

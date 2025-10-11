@@ -4,7 +4,6 @@ import { useState } from "react"
 import Link from "next/link"
 import {
   Users,
-  Handshake,
   Star,
   Phone,
   Mail,
@@ -19,6 +18,8 @@ import {
   Send,
   Zap,
   Globe,
+  Fish,
+  Store,
 } from "lucide-react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import Navbar from "../components/Navbar"
@@ -159,13 +160,14 @@ export default function HomePage() {
             animate="visible"
           >
             <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
-              <motion.div className="mt- flex-1 text-center lg:text-left space-y-8" variants={itemVariants}>
+              <motion.div className="mt-20 flex-1 text-center lg:text-left space-y-8" variants={itemVariants}>
                 <motion.div
                   className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-xl px-6 py-3 rounded-full border border-gray-200"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <Shield className="w-5 h-5 text-emerald-500" />
-                  <span className="text-sm font-semibold text-gray-500">Govt. Certified Consultants</span>
+                  <Fish className="w-5 h-5 text-blue-600" />
+                  <span className="text-sm font-semibold text-gray-700">From Our Store To Your Feet</span>
+                  <Store className="w-5 h-5 text-blue-600" />
                 </motion.div>
 
                 <motion.h1
@@ -180,12 +182,26 @@ export default function HomePage() {
                 </motion.h1>
 
                 <motion.p
-                  className="text-lg sm:text-xl text-gray-500 max-w-2xl leading-relaxed px-2 sm:px-0"
+                  className="text-lg sm:text-xl text-gray-600 max-w-2xl leading-relaxed px-2 sm:px-0"
                   variants={itemVariants}
                 >
-                  We help businesses handle PF, ESI, Payroll, and Labor Law compliance with accuracy and ease. Focus on
-                  growing your business while we handle the complexities.
+                  We bring expert compliance solutions directly to your business. From our expertise to your peace of
+                  mind - handling PF, ESI, Payroll, and Labor Law compliance with precision and care.
                 </motion.p>
+
+                <motion.div
+                  className="flex items-center justify-center lg:justify-start space-x-4 text-sm text-gray-600"
+                  variants={itemVariants}
+                >
+                  <div className="flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-full">
+                    <Shield className="w-4 h-4 text-blue-600" />
+                    <span className="font-semibold">Govt. Certified</span>
+                  </div>
+                  <div className="flex items-center space-x-2 bg-emerald-50 px-4 py-2 rounded-full">
+                    <TrendingUp className="w-4 h-4 text-emerald-600" />
+                    <span className="font-semibold">15+ Years Experience</span>
+                  </div>
+                </motion.div>
 
                 <motion.div className="flex flex-col sm:flex-row gap-4 sm:gap-6 px-4 sm:px-0" variants={itemVariants}>
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -201,7 +217,7 @@ export default function HomePage() {
                   </motion.div>
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Link
-                      href="/services"
+                      href="/our-services"
                       className="bg-white/80 backdrop-blur-xl hover:bg-white text-gray-900 hover:text-gray-700 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl text-base sm:text-lg font-bold transition-all duration-300 flex items-center justify-center space-x-2 border border-gray-200 w-full sm:w-auto"
                     >
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -219,7 +235,7 @@ export default function HomePage() {
                 >
                   <div className="text-center space-y-4 sm:space-y-6">
                     <motion.div
-                      className="w-24 h-24 sm:w-32 sm:h-32 bg-gray-100/50 rounded-full flex items-center justify-center mx-auto border border-gray-200"
+                      className="w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-blue-100 to-blue-50 rounded-full flex items-center justify-center mx-auto border-4 border-blue-200"
                       animate={{
                         rotate: 360,
                         scale: [1, 1.1, 1],
@@ -229,9 +245,12 @@ export default function HomePage() {
                         scale: { duration: 2, repeat: Number.POSITIVE_INFINITY },
                       }}
                     >
-                      <Handshake className="w-12 h-12 sm:w-16 sm:h-16 text-blue-600" />
+                      <Fish className="w-12 h-12 sm:w-16 sm:h-16 text-blue-600" />
                     </motion.div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Building Trust Together</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Your Compliance Partner</h3>
+                    <p className="text-sm sm:text-base text-gray-600 italic">
+                      "From our expertise to your success - delivering compliance solutions right to your doorstep"
+                    </p>
                     <div className="flex justify-center space-x-1">
                       {[...Array(5)].map((_, i) => (
                         <motion.div
@@ -244,7 +263,9 @@ export default function HomePage() {
                         </motion.div>
                       ))}
                     </div>
-                    <p className="text-sm sm:text-base text-gray-500">Trusted by 200+ businesses across India</p>
+                    <p className="text-sm sm:text-base text-gray-500 font-semibold">
+                      Trusted by 200+ businesses across India
+                    </p>
                   </div>
                 </motion.div>
               </motion.div>
