@@ -2,9 +2,9 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import  Navbar  from "../../components/Navbar"
-import Footer  from "../../components/Footer"
-import  InteractiveBackground  from "../../components/InteractiveBackground"
+import Navbar from "../../components/Navbar"
+import Footer from "../../components/Footer"
+import InteractiveBackground from "../../components/InteractiveBackground"
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -225,7 +225,17 @@ const ContactUs = () => {
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-1">Office Address</h4>
+                        <h4 className="font-semibold text-gray-900 mb-1">Registered Office Address</h4>
+                        <p className="text-gray-600">
+                          3/47 3rd Block 1st Street
+                          <br />
+                          Kannadasan Nagar Kodungaiyur
+                          <br />
+                          Chennai, Tamil Nadu 600118
+                          <br />
+                          India
+                        </p>
+                        <h4 className="font-semibold text-gray-900 mb-1 mt-4">Corporate Office Address</h4>
                         <p className="text-gray-600">
                           13/22, Chinnaswamy St, Agaram, Perambur
                           <br />
@@ -348,10 +358,8 @@ const ContactUs = () => {
             </motion.div>
           </div>
         </motion.section>
-      <Footer />
-
+        <Footer />
       </main>
-
     </div>
   )
 }
