@@ -3,6 +3,7 @@ import { FlipWords } from "@/components/ui/flip-words"
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient"
 import DotBackgroundDemo from "@/components/ui/Dot_background"
 import NavbarDemo from "@/components/navbar-demo"
+import SiteFooter from "@/components/site-footer"
 
 const dummyContent = [
   {
@@ -74,9 +75,9 @@ const dummyContent = [
 export default function HomePage() {
   const words = ["better", "modern", "impactful", "fast"]
   return (
-    <div className="relative min-h-screen bg-black text-white">
-      <div className="pointer-events-none fixed inset-0 -z-10">
-        <DotBackgroundDemo className="h-full" />
+    <div className="relative min-h-screen text-white">
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <DotBackgroundDemo className="h-full min-h-screen" />
       </div>
 
       <div className="relative z-10">
@@ -138,6 +139,7 @@ export default function HomePage() {
             </TracingBeam>
           </section>
         </main>
+        <SiteFooter />
       </div>
     </div>
   )
