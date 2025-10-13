@@ -161,14 +161,6 @@ export default function HomePage() {
           >
             <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
               <motion.div className="mt-20 flex-1 text-center lg:text-left space-y-8" variants={itemVariants}>
-                <motion.div
-                  className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-xl px-6 py-3 rounded-full border border-gray-200"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <Fish className="w-5 h-5 text-blue-600" />
-                  <span className="text-sm font-semibold text-gray-700">From Our Store To Your Feet</span>
-                  <Store className="w-5 h-5 text-blue-600" />
-                </motion.div>
 
                 <motion.h1
                   className="text-4xl sm:text-5xl lg:text-7xl font-black text-gray-900 leading-tight"
