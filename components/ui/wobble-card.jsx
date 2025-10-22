@@ -1,27 +1,22 @@
-"use client";
 import React, { useState } from "react";
-import { motion } from "motion/react";
-import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
-export const WobbleCard = ({
-  children,
-  containerClassName,
-  className,
-}: {
-  children: React.ReactNode;
-  containerClassName?: string;
-  className?: string;
-}) => {
+// optional utility for merging class names (if you used "@/lib/utils")
+// you can replace it with your own or just use string templates instead
+const cn = (...classes) => classes.filter(Boolean).join(" ");
+
+export const WobbleCard = ({ children, containerClassName, className }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
 
-  const handleMouseMove = (event: React.MouseEvent<HTMLElement>) => {
+  const handleMouseMove = (event) => {
     const { clientX, clientY } = event;
     const rect = event.currentTarget.getBoundingClientRect();
     const x = (clientX - (rect.left + rect.width / 2)) / 20;
     const y = (clientY - (rect.top + rect.height / 2)) / 20;
     setMousePosition({ x, y });
   };
+
   return (
     <motion.section
       onMouseMove={handleMouseMove}
@@ -37,12 +32,12 @@ export const WobbleCard = ({
         transition: "transform 0.1s ease-out",
       }}
       className={cn(
-        "mx-auto w-full bg-indigo-800  relative rounded-2xl overflow-hidden",
+        "mx-auto w-full bg-indigo-800 relative rounded-2xl overflow-hidden",
         containerClassName
       )}
     >
       <div
-        className="relative  h-full [background-image:radial-gradient(88%_100%_at_top,rgba(255,255,255,0.5),rgba(255,255,255,0))]  sm:mx-0 sm:rounded-2xl overflow-hidden"
+        className="relative h-full [background-image:radial-gradient(88%_100%_at_top,rgba(255,255,255,0.5),rgba(255,255,255,0))] sm:mx-0 sm:rounded-2xl overflow-hidden"
         style={{
           boxShadow:
             "0 10px 32px rgba(34, 42, 53, 0.12), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.05), 0 4px 6px rgba(34, 42, 53, 0.08), 0 24px 108px rgba(47, 48, 55, 0.10)",
