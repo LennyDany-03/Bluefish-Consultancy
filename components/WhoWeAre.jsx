@@ -50,6 +50,7 @@ const WhoWeAre = () => {
               y: 50,
               duration: 1,
               ease: "power3.out",
+              clearProps: "all",
             })
 
             gsap.from(".stat-card", {
@@ -59,6 +60,7 @@ const WhoWeAre = () => {
               stagger: 0.15,
               ease: "back.out(1.7)",
               delay: 0.3,
+              clearProps: "all",
             })
 
             gsap.from(".cta-section", {
@@ -67,6 +69,7 @@ const WhoWeAre = () => {
               duration: 0.8,
               ease: "power3.out",
               delay: 0.8,
+              clearProps: "all",
             })
           }
         })
@@ -84,7 +87,7 @@ const WhoWeAre = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden py-12 md:py-16 px-4"
+      className="relative w-full min-h-screen flex items-center justify-center py-12 md:py-16 px-4"
     >
       {/* Dot Grid Background */}
       <div className="absolute inset-0 z-0">
@@ -114,7 +117,7 @@ const WhoWeAre = () => {
               </h2>
             </div>
 
-            <p className="text-base md:text-lg text-gray-300 leading-relaxed max-w-2xl mt-30">
+            <p className="text-base md:text-lg text-gray-300 leading-relaxed max-w-2xl">
               At <span className="font-semibold text-white">BlueFish Consultancy</span>, we specialize in resolving the
               toughest Provident Fund cases for employees, employers, and SEZ units across India. Our approach is{" "}
               <span className="font-semibold text-[#5227FF]">transparent</span>,{" "}
@@ -192,7 +195,7 @@ const WhoWeAre = () => {
                   alt="Professional consultancy team"
                   width={600}
                   height={400}
-                  className="w-full h-78 object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-4">
